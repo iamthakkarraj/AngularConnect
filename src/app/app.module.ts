@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { DefaultComponent } from './shared/components/default/default.component';
 import { WelcomeComponent } from './shared/components/welcome/welcome.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [    
@@ -11,7 +10,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     WelcomeComponent
   ],
   imports: [
-    NgbModule.forRoot(),
     BrowserModule,
     AppRoutingModule
   ],
@@ -19,6 +17,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DefaultComponent
   ],
   providers: [],
-  bootstrap: [WelcomeComponent]
+  bootstrap: [DefaultComponent]
 })
 export class AppModule { }
