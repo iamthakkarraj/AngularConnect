@@ -31,6 +31,10 @@ body {
     background-image: url('./assets/img/welcome-to-connect-bg.svg');
 }
 
+.strike-through {
+    text-decoration: line-through !important;
+}
+
 h1::first-letter {
     font-size: 64px;
     color: var(--theme-main-color-light);
@@ -62,11 +66,17 @@ h2 {
 /* ============================================ */
 /* Overriding Bootstrap Styles Starts From Here */
 /* ============================================ */
+.btn.active{
+    background-color: var(--theme-main-color-dark) !important;     
+}
 .btn {
     background-color: var(--theme-main-color-light) !important;    
     color: var(--theme-font-color-light) !important;
     border-color: var(--theme-main-color-light) !important;
     border-radius: 0px!important;
+}
+.focus{
+    outline: none!important;
 }
 .btn:hover {
     background-color: var(--theme-main-color-dark) !important;     
@@ -74,6 +84,9 @@ h2 {
 }
 .jumbotron{
     border-radius: 0px!important;    
+}
+.spinner-border{
+    color: var(--theme-main-color-dark) !important;   
 }
 .shadow-none {
     box-shadow: none!important;
