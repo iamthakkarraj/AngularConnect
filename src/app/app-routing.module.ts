@@ -1,22 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ExampleScreenComponent } from './shared/components/example-screen/example-screen.component';
-import { WelcomeComponent } from './shared/components/welcome/welcome.component';
 
-const routes: Routes = [
-  { 
-    path: '',
-    redirectTo: '/Welcome',
-    pathMatch: 'full'
+const routes: Routes = [ 
+  {
+    path: '', 
+    loadChildren: () => import('./modules/shared/shared.module').then(m => m.SharedModule) 
   },
-  { 
-    path: 'Welcome',
-    component: WelcomeComponent
-  },
-  { 
-    path: 'Examples',
-    component: ExampleScreenComponent
-  }, 
   {
     path: 'App', 
     loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule) 
@@ -31,7 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
-
-
-}
+export class AppRoutingModule { }

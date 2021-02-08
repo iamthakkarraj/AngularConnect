@@ -4,8 +4,6 @@
 
 export const environment = {
   production: false,
-  ApiTokenForDummyApiIO: '601d24233f46ca7b155c77d8',
-  DummyApiBasePath: 'https://dummyapi.io/data/api/',
-  DummyApiTagPath: 'tag?limit='
-
+  dummyApiBasePath: 'https://jsonplaceholder.typicode.com/',
+  dummyApiTodoPath: 'todos/'
 };

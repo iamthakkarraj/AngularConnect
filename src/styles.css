@@ -47,6 +47,26 @@ h1:hover:first-letter {
 h2 {
     margin-bottom: 0px !important;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--theme-main-color-light);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--theme-main-color-dark);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
  
 .app-anchor {
     color: var(--theme-main-color-light);
@@ -82,8 +102,15 @@ h2 {
     background-color: var(--theme-main-color-dark) !important;     
     border-color: var(--theme-main-color-dark) !important;
 }
+.btn:disabled{
+    pointer-events: none;
+    opacity: 0.4;
+}
 .jumbotron{
-    border-radius: 0px!important;    
+    border-radius: 0px!important;
+    background-color: rgba(248, 249, 250, .15);  
+    backdrop-filter: blur(64px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
 }
 .spinner-border{
     color: var(--theme-main-color-dark) !important;   
