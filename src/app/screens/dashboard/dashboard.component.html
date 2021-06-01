@@ -1,0 +1,49 @@
+<div class="p-5">
+
+  <div class="row col-md-12 py-3">
+    <a class="btn mr-3">Dashboard</a>
+    <a class="btn" routerLink="/App/List">Users</a>
+  </div>
+
+  <div class="jumbotron col-md-12 mr-5 py-2">
+
+    <h2>Users</h2>
+
+    <span [ngClass]="(userCount > 20) ? 'text-danger' : 'text-success'">
+      Total User Count : {{userCount}}
+    </span>
+
+  </div>
+
+  <div class="jumbotron col-md-12" style="flex-grow: 1;">
+
+    <h2>
+      Weatherfore Cast
+    </h2>
+
+    <div class="table-responsive">
+      <table class="table no-wrap user-table mb-0">
+        <thead>
+          <tr>
+            <th scope="col" class="border-0 text-uppercase font-medium">Date</th>
+            <th scope="col" class="border-0 text-uppercase font-medium">Temperature C</th>
+            <th scope="col" class="border-0 text-uppercase font-medium">temperature F</th>
+            <th scope="col" class="border-0 text-uppercase font-medium">summary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let forecast of weatherForecast">
+            <td>
+              <h5 class="font-medium mb-0">{{forecast.date}}</h5>
+            </td>
+            <td> <span class="text-muted">{{forecast.temperatureC}}</span><br>
+            </td>
+            <td> <span class="text-muted">{{forecast.temperatureF}}</span><br>
+            </td>
+            <td> <span class="text-muted">{{forecast.summary}}</span><br>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

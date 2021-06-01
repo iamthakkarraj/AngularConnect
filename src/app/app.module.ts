@@ -2,24 +2,30 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { DefaultComponent } from './modules/shared/components/default/default.component';
-import { SharedModule } from './modules/shared/shared.module';
+import { DashboardComponent } from './screens/dashboard/dashboard.component';
+import { DefaultComponent } from './components/default/default.component';
+import { UserService } from './service/user/user.service';
+import { WeatherForecastService } from './service/weather-forecast/weather-forecast.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [    
     
-  ],
+  DashboardComponent, DefaultComponent],
   imports: [    
     AppRoutingModule,
-    SharedModule.forRoot(),
     BrowserModule,
     CommonModule
   ],
   exports: [  
     BrowserModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService, 
+    WeatherForecastService
+  ],
   bootstrap: [DefaultComponent]
 })
 export class AppModule { }

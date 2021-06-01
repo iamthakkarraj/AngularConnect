@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  baseUrl: "https://192.168.10.67/",
   dummyApiBasePath: 'https://jsonplaceholder.typicode.com/',
   dummyApiTodoPath: 'todos/'
 };

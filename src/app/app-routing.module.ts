@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './screens/dashboard/dashboard.component';
 
-const routes: Routes = [ 
+const routes: Routes = [   
   {
-    path: '', 
-    loadChildren: () => import('./modules/shared/shared.module').then(m => m.SharedModule) 
+    path: '',
+    component: DashboardComponent
   },
   {
     path: 'App', 
-    loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule) 
+    loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) 
   },
-  { 
-    path: 'Admin', 
-    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) 
+  {
+    path: '**',
+    component: DashboardComponent
   }
 ]
 

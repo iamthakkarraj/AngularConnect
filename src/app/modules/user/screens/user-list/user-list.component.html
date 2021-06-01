@@ -1,0 +1,59 @@
+<div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="jumbotron shadow p-0">
+        <div class="btn w-100 py-2" routerLink="">
+          <h4 class="m-0 p-0"><i class="fa fa-chevron-left mx-2" aria-hidden="true"></i> Go back to Dashboard
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h6 class="jumbotron font-weight-bold py-3 mb-0">
+    Check Our Users Profile
+  </h6>
+
+  <div class="d-flex justify-content-start py-3">
+    <a class="btn" routerLink="/App/User"> + Add user</a>
+  </div>
+
+  <div *ngIf="users.length > 0; then data; else loader"></div>
+
+  <ng-template #data>
+
+    <div class="col-md-12 p-5 jumbotron" style="overflow-x: scroll;">
+      <div class="d-flex">
+        <div *ngFor="let user of users">
+          <div class="card rounded-0 shadow-lg m-2 border-0" [routerLink]="['/App/User',user.id]">
+            <div class="row">
+              <div class="col">
+                <img src="{{user.avatar}}" width="200px" height="200px">
+              </div>
+              <div class="col d-flex flex-column m-2 d-flex justify-content-center">
+                {{user.first_name + ' ' + user.last_name}}
+                <br />
+                Created : {{ user.createdDate | date:'mm/dd/yy' }}
+                Updated : {{ user.updatedDate | date:'mm/dd/yy' }}
+                <br /> <a href="mailto:{{user.email}}">{{user.email}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+
+  <ng-template #loader>
+    <div class="row w-100 pt-5 justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+
+
+
+</div>
